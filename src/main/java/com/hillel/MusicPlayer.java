@@ -1,12 +1,15 @@
 package com.hillel;
 
-public class MusicPlayer {
-    private Music music;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-    public MusicPlayer(Music music) {
-        this.music = music;
-    }
-    public void playMusic(){
-        System.out.println("Playing "+music.getSong());
+import java.util.ArrayList;
+import java.util.List;
+@Component
+public class MusicPlayer {
+    @Autowired
+    private Music music;
+    public void playMusic() {
+        System.out.println("Playing: " + music.getSong());
     }
 }
